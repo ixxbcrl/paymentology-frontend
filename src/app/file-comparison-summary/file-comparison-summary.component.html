@@ -1,0 +1,27 @@
+<div class="card-view-wrapper" *ngIf="summaryDto">
+    <header class="header-content">File Comparison Summary</header>
+    <ul>
+        <li style="width: 120%;">
+            <span class="view-wrapper-left-l2">
+                <h3 class="view-wrapper-header">File One</h3>
+                <div><span>Total Records: </span>{{summaryDto.fileOneTotalRecords}}</div>
+                <div><span>Matching Records: </span>{{summaryDto.matchingRecords}}</div>
+                <div><span>Unmatched Records: </span>{{summaryDto.fileOneUnmatchedRecords}}</div>
+            </span>
+            <span class="view-wrapper-right-l2">
+                <h3 class="view-wrapper-header">File Two</h3>
+                <div><span>Total Records: </span>{{summaryDto.fileTwoTotalRecords}}</div>
+                <div><span>Matching Records: </span>{{summaryDto.matchingRecords}}</div>
+                <div><span>Unmatched Records: </span>{{summaryDto.fileTwoUnmatchedRecords}}</div>
+            </span>
+        </li>
+    </ul>
+
+    <div style="text-align:center; padding-bottom: 20px;">
+        <button mat-raised-button color="primary" (click)="populateUnmatchedTable()" class="btn btn-success">
+            Unmatched Report
+        </button>
+    </div>
+</div>
+
+<app-file-comparison-table [summaryDto]="tableSummaryDto">test</app-file-comparison-table>

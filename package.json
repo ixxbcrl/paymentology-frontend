@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
+    "start": "http-server-spa dist/paymentology-angular-xianming index.html $PORT",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -11,10 +12,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
+    "@angular/cdk": "^14.0.1",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
+    "@angular/material": "^14.0.1",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",

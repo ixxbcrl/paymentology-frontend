@@ -1,0 +1,117 @@
+<div class="card-view-wrapper" *ngIf="summaryDto">
+    <header class="header-content">Unmatched Report</header>
+
+
+    <div class="mat-elevation-z8">
+    <mat-table mat-table [dataSource]="tableDataSource">
+        <ng-container matColumnDef="fileOneLineNo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 1 Line No. </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='One'">
+                        {{element.unmatchedTransaction.lineNumber}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="fileOneTransactionID">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 1 Transaction ID </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='One'">
+                        {{element.unmatchedTransaction.transactionID}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+        <ng-container matColumnDef="fileOneTransactionDate">
+            <mat-header-cell *matHeaderCellDef> File 1 Transaction Date </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='One'">
+                        {{element.unmatchedTransaction.transactionDate | date:'yyyy-MM-dd HH:mm:ss'}} 
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="fileOneTransactionAmount">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 1 Transaction Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='One'">
+                        {{element.unmatchedTransaction.transactionAmount}} 
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tableTwoCloseMatches">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 2 Close Matches</mat-header-cell>
+            <mat-cell *matCellDef="let element"> 
+                <div>
+                    <ng-container *ngFor="let closeMatch of element.closeMatches">
+                        <ul>
+                            <li>Line No.: {{closeMatch.lineNumber}}</li>
+                            <li>ID: {{closeMatch.transactionID}}</li>
+                            <li>Transaction Amount: {{closeMatch.transactionAmount}}</li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tableTwoUnmatchedLineNo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 2 Line No. </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='Two'">
+                        {{element.unmatchedTransaction.lineNumber}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tableTwoUnmatchedTransactionID">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 2 Transaction ID </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='Two'">
+                        {{element.unmatchedTransaction.transactionID}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tableTwoUnmatchedTransactionDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 2 Transaction Date </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='Two'">
+                        {{element.unmatchedTransaction.transactionDate | date:'yyyy-MM-dd HH:mm:ss'}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tableTwoUnmatchedTransactionAmount">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> File 2 Transaction Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div>
+                    <ng-container *ngIf="element.sourceFile==='Two'">
+                        {{element.unmatchedTransaction.transactionAmount}}
+                    </ng-container>
+                </div>
+            </mat-cell>
+          </ng-container>
+
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    </div>
+
+</div>

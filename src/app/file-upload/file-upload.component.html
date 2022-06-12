@@ -1,0 +1,23 @@
+<div class="card-view-wrapper">
+    <header class="header-content">Select Files to Compare</header>
+    <ul>
+        <li>
+            <span>Select file 1:
+            <input class="form-control" type="file" 
+                    (change)="uploadFileOne($event)">
+            </span>
+            <span>Select File 2:
+            <input class="form-control" type="file" 
+                    (change)="uploadFileTwo($event)">
+        </span>
+        </li>
+        <li>
+            <button mat-raised-button color="primary" (click)="uploadFileToActivity()" 
+            class="btn btn-success">
+            Compare
+            </button>
+        </li>
+    </ul>
+</div>
+
+<app-file-comparison-summary [summaryDto]="summaryDto"></app-file-comparison-summary>

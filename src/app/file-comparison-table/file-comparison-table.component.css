@@ -1,0 +1,71 @@
+.card-view-wrapper {
+    border-radius: 5px;
+    margin: 24px 0;
+    background-color: #f1f1f133;
+    border: 0.5px solid #DBDBDB;
+    color: #444;
+    clear: both;
+    display: block;
+}
+
+.header-content {
+    background-color: #134c7e;
+    color: #fafafa;
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding: 8px 16px;
+    display: block;
+}
+
+.firstFile {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+    width: 100%;
+}
+
+ul {
+    padding-right: 20px;
+    list-style-type:none;
+}
+
+.mat-column-fileOneTransactionDate {
+    flex: 0 0 10%;
+}
+
+.mat-column-fileOneTransactionAmount {
+    flex: 0 0 10%;
+}
+
+.mat-column-fileOneTransactionID {
+    flex: 0 0 10%;
+}
+
+.mat-column-fileOneLineNo {
+    flex: 0 0 10%;
+}
+
+.mat-column-tableTwoCloseMatches {
+    flex: 0 0 15%;
+}
+
+.mat-column-tableTwoUnmatchedLineNo {
+    flex: 0 0 10%;
+}
+
+.mat-column-tableTwoUnmatchedTransactionID {
+    flex: 0 0 10%;
+}
+
+.mat-column-tableTwoUnmatchedTransactionDate {
+    flex: 0 0 10%;
+}
+
+.mat-column-tableTwoUnmatchedTransactionAmount {
+    flex: 0 0 10%;
+}
