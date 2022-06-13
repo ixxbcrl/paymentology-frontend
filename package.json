@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --aot",
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
