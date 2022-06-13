@@ -12,7 +12,7 @@
         </span>
         </li>
         <li>
-            <button mat-raised-button color="primary" (click)="uploadFileToActivity()" 
+            <button mat-raised-button color="primary" [disabled]="shouldGreyOutCompareButton" (click)="uploadFileToActivity()" 
             class="btn btn-success">
             Compare
             </button>

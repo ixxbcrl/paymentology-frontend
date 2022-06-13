@@ -10,7 +10,7 @@ import { TransactionReconcileSummaryDto } from '../transaction-reconcile-summary
 export class FileUploadComponent implements OnInit {
   fileToUploadOne?: File;
   fileToUploadTwo?: File;
-  fileCompareSuccess: Boolean = false;
+  shouldGreyOutCompareButton: Boolean = false;
   summaryDto?: TransactionReconcileSummaryDto;
 
   uploadFileOne(event: Event) {
@@ -33,9 +33,10 @@ export class FileUploadComponent implements OnInit {
 
   uploadFileToActivity() {
     if (this.fileToUploadOne && this.fileToUploadTwo) {
+      this.shouldGreyOutCompareButton = true;
       this.fileUploadService.postFile(this.fileToUploadOne, this.fileToUploadTwo)
       .subscribe(summaryDto => {
-        this.fileCompareSuccess = true;
+        this.shouldGreyOutCompareButton = false;
         this.summaryDto = summaryDto;
         }, error => {
           // this.dialog.open(ErrorDialogComponent, {
